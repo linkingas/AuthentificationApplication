@@ -1,0 +1,147 @@
+﻿<div class="main-container">
+    <div class="main-content">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">
+                <div class="login-container">
+                    <div class="center">
+                        <h1>
+                            <i class="ace-icon fa fa-leaf green"></i>
+                            <span class="red">Authentication</span>
+                            <span class="white" id="id-text2">Application</span>
+                        </h1>
+                        <h4> email : admin@admin.com , password : 0000</h4>
+                    </div>
+
+                    <div class="space-6"></div>
+                    <div class="position-relative">
+                        <div id="login-box" class="login-box visible widget-box no-border">
+                            <div class="widget-body">
+                                <div class="widget-main">
+                                    <h4 class="header blue lighter bigger">
+                                        <i class="ace-icon fa fa-info-circle green"></i>
+                                        Please Enter Your Information
+                                    </h4>
+
+                                    <div class="space-6"></div>
+                                   
+                                
+                                    <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+                                        <fieldset>
+                                        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+                                       
+                                            <label class="block clearfix">
+                                                <span class="block input-icon input-icon-right">
+                                                    <input type="text" class="form-control" name="username" [(ngModel)]="model.username" #username="ngModel" required/>
+                                                    <i class="ace-icon fa fa-user"></i>
+                                                </span>
+                                            </label>
+                                            <div *ngIf="f.submitted && !username.valid" class="help-block">Username is required</div>
+                                        </div>
+                                        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
+                                       
+                                            
+                                            <label class="block clearfix">
+                                                <span class="block input-icon input-icon-right">
+                                                    <input type="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" required/>
+
+                                                    <i class="ace-icon fa fa-lock"></i>
+                                                </span>
+                                            </label>
+                                            <div *ngIf="f.submitted && !password.valid" class="help-block">Password is required</div>
+                                        </div>
+                                            <div class="form-group">
+                                                
+                                                
+                                                	 
+                                                <button [disabled]="loading" class="width-35 pull-right btn btn-sm btn-primary">	<i class="ace-icon fa fa-key"></i>
+                                                    <span class="bigger-110">Login</span></button>
+                                                <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="/>
+                                            </div>
+                                        <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+                                        </fieldset>
+                                    </form>
+
+
+                                    <div class="space-6"></div>
+
+
+                                </div><!-- /.widget-main -->
+                            
+                 
+
+                            </div><!-- /.widget-body -->
+                        </div><!-- /.login-box -->
+
+
+
+                    </div><!-- /.position-relative -->
+
+
+                </div>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.main-content -->
+</div><!-- /.main-container -->
+<!-- basic scripts -->
+
+
+<script src="/Scripts/js/jquery-2.1.4.min.js"></script>
+
+<!-- <![endif]-->
+<!--[if IE]>
+    <script src="assets/js/jquery-1.11.3.min.js"></script>
+<![endif]-->
+<script type="text/javascript">
+    if ('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
+</script>
+
+<!-- inline scripts related to this page -->
+<script type="text/javascript">
+    jQuery(function ($) {
+        $(document).on('click', '.toolbar a[data-target]', function (e) {
+            e.preventDefault();
+            var target = $(this).data('target');
+            $('.widget-box.visible').removeClass('visible');//hide others
+            $(target).addClass('visible');//show target
+        });
+    });
+
+
+
+    //you don't need this, just used for changing background
+    jQuery(function ($) {
+        $('#btn-login-dark').on('click', function (e) {
+            $('body').attr('class', 'login-layout');
+            $('#id-text2').attr('class', 'white');
+            $('#id-company-text').attr('class', 'blue');
+
+            e.preventDefault();
+        });
+        $('#btn-login-light').on('click', function (e) {
+            $('body').attr('class', 'login-layout light-login');
+            $('#id-text2').attr('class', 'grey');
+            $('#id-company-text').attr('class', 'blue');
+
+            e.preventDefault();
+        });
+        $('#btn-login-blur').on('click', function (e) {
+            $('body').attr('class', 'login-layout blur-login');
+            $('#id-text2').attr('class', 'white');
+            $('#id-company-text').attr('class', 'light-blue');
+
+            e.preventDefault();
+        });
+
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+

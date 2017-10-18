@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthentificationApplication.Service", "AuthentificationApplication.Service\AuthentificationApplication.Service.csproj", "{5CF30AF0-7E96-4329-AEFD-49749A59912F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{15386E1E-0B36-427A-9958-C1CFA6CE30C2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{79040692-F062-4047-B3E6-E4CE4837DD2A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthentificationApplication.Web", "AuthentificationApplication.Web\AuthentificationApplication.Web.csproj", "{3C62DA66-62B8-474C-90A0-51250CA1C58D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5CF30AF0-7E96-4329-AEFD-49749A59912F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CF30AF0-7E96-4329-AEFD-49749A59912F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CF30AF0-7E96-4329-AEFD-49749A59912F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CF30AF0-7E96-4329-AEFD-49749A59912F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C62DA66-62B8-474C-90A0-51250CA1C58D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C62DA66-62B8-474C-90A0-51250CA1C58D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C62DA66-62B8-474C-90A0-51250CA1C58D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C62DA66-62B8-474C-90A0-51250CA1C58D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5CF30AF0-7E96-4329-AEFD-49749A59912F} = {15386E1E-0B36-427A-9958-C1CFA6CE30C2}
+		{3C62DA66-62B8-474C-90A0-51250CA1C58D} = {79040692-F062-4047-B3E6-E4CE4837DD2A}
+	EndGlobalSection
+EndGlobal

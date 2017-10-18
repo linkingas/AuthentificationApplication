@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Angular QuickStart</title>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="/Content/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/Content/font-awesome/4.5.0/css/font-awesome.min.css" />
+
+    <!-- text fonts -->
+    <link rel="stylesheet" href="/Content/css/fonts.googleapis.com.css" />
+
+
+    <link rel="stylesheet" href="/Content/css/ace.min.css" />
+    <link rel="stylesheet" href="/Content/css/ace-rtl.min.css" />
+
+
+    <!-- Polyfill(s) for older browsers -->
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+
+    <script src="systemjs.config.js"></script>
+    <script>
+        System.import('main.js').catch(function (err) { console.error(err); });
+    </script>
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link href="Content/alert.css" rel="stylesheet" />
+</head>
+
+<body>
+    <my-app>
+        <div class="loader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+            </svg>
+        </div>
+
+    </my-app>
+
+
+
+</body>
+</html>
