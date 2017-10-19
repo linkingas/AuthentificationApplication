@@ -86,7 +86,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AuthHandler.cs" />
+    <Compile Include="Infrastructure\AuthHandler.cs" />
     <Compile Include="Controllers\AuthenticateController.cs" />
     <Compile Include="Controllers\ConfidentialController.cs" />
     <Compile Include="Helpers\AuthentificationTools.cs" />

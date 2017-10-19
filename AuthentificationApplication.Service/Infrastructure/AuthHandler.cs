@@ -8,10 +8,12 @@ using System.Security.Claims;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
+using System.Web.Http.Controllers;
+using System.Web.Http.Filters;
 using System.Web.Script.Serialization;
 using JWT;
 
-namespace JwtWebApi
+namespace AuthentificationApplication.Service.Infrastructure
 {
     public class AuthHandler:DelegatingHandler
     {
@@ -27,12 +29,12 @@ namespace JwtWebApi
 
 
                 if (authHeaderValues == null)
-                    return base.SendAsync(request, cancellationToken); // cross fingers
+                    return base.SendAsync(request, cancellationToken); 
 
                 var bearerToken = authHeaderValues.ElementAt(0);
                 var token = bearerToken.StartsWith("Bearer ") ? bearerToken.Substring(7) : bearerToken;
 
-                //var secret = ConfigurationManager.AppSettings.Get("jwtKey");
+                
                 var secret = "secretKey";
 
                 Thread.CurrentPrincipal = ValidateToken(
@@ -126,6 +128,36 @@ namespace JwtWebApi
         {
             var epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
             return epoch.AddSeconds(unixTime);
+        }
+    }
+
+
+
+    public class ClaimsAuthorizationAttribute : AuthorizationFilterAttribute
+    {
+        public string ClaimType { get; set; }
+        public string ClaimValue { get; set; }
+
+        public override Task OnAuthorizationAsync(HttpActionContext actionContext, System.Threading.CancellationToken cancellationToken)
+        {
+
+            var principal = Thread.CurrentPrincipal as ClaimsPrincipal;
+
+            if (!principal.Identity.IsAuthenticated)
+            {
+                actionContext.Response = actionContext.Request.CreateResponse(HttpStatusCode.Unauthorized);
+                return Task.FromResult<object>(null);
+            }
+
+            if (!(principal.HasClaim(q => true)))
+            {
+                actionContext.Response = actionContext.Request.CreateResponse(HttpStatusCode.Unauthorized);
+                return Task.FromResult<object>(null);
+            }
+
+            
+            return Task.FromResult<object>(null);
+
         }
     }
 }

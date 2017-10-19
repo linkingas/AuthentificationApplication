@@ -1,6 +1,6 @@
 ﻿using System.Web.Http;
 using System.Web.Http.Cors;
-using JwtWebApi;
+using AuthentificationApplication.Service.Infrastructure;
 using Owin;
 
 namespace AuthentificationApplication.Service
